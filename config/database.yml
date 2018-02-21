@@ -23,5 +23,4 @@ test:
   database: rdmanager_test
 
 production:
-  <<: *default
-  database: rdmanager_prod
+  url: <%= ENV["DATABASE_URL"] %>
