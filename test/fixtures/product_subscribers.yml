@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  product_price: one
+  is_manager: false
+  is_payer: false
+
+two:
+  company: two
+  product_price: two
+  is_manager: false
+  is_payer: false

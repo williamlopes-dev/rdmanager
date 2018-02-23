@@ -1,0 +1,2 @@
+module ProductSubscribersHelper
+end

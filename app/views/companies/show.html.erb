@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Company</h1>
+
 <p>
   <strong>Cnpj:</strong>
   <%= @company.cnpj %>
@@ -8,6 +10,10 @@
 <p>
   <strong>Name:</strong>
   <%= @company.name %>
+</p>
+
+<p>
+  <strong><%= link_to 'Produtcs', company_products_path(@company) %></strong>
 </p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |

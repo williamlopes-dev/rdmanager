@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Product Subscribers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Product price</th>
+      <th>Is manager</th>
+      <th>Is payer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_subscribers.each do |product_subscriber| %>
+      <tr>
+        <td><%= product_subscriber.company %></td>
+        <td><%= product_subscriber.product_price %></td>
+        <td><%= product_subscriber.is_manager %></td>
+        <td><%= product_subscriber.is_payer %></td>
+        <td><%= link_to 'Show', product_subscriber %></td>
+        <td><%= link_to 'Edit', edit_product_subscriber_path(product_subscriber) %></td>
+        <td><%= link_to 'Destroy', product_subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product Subscriber', new_product_subscriber_path %> |
+<%= link_to 'Back', root_path %>

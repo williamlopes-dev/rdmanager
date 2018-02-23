@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_price.product.full_name %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @product_price.currency.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product_price.price %>
+</p>
+
+<%= link_to 'Edit', edit_product_price_path(@product_price) %> |
+<%= link_to 'Back', product_prices_path %>

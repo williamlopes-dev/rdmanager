@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  currency: one
+  decimal_places: 2
+
+two:
+  company: two
+  currency: two
+  decimal_places: 4

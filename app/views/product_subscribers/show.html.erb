@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Product Subscriber</h1>
+
+<p>
+  <strong>Company:</strong>
+  <%= @product_subscriber.company %>
+</p>
+
+<p>
+  <strong>Product price:</strong>
+  <%= @product_subscriber.product_price %>
+</p>
+
+<p>
+  <strong>Is manager:</strong>
+  <%= @product_subscriber.is_manager %>
+</p>
+
+<p>
+  <strong>Is payer:</strong>
+  <%= @product_subscriber.is_payer %>
+</p>
+
+<%= link_to 'Edit', edit_product_subscriber_path(@product_subscriber) %> |
+<%= link_to 'Back', product_subscribers_path %>
