@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20180223020919) do
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id", "name"], name: "index_products_on_company_id_and_name", unique: true
     t.index ["company_id"], name: "index_products_on_company_id"
-    t.index ["name"], name: "index_products_on_name", unique: true
   end
 
   add_foreign_key "company_currencies", "companies"
