@@ -16,11 +16,15 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create company" do
+    assert @company.destroy
+
     assert_difference('Company.count') do
       post companies_url, params: { company: { cnpj: @company.cnpj, name: @company.name } }
     end
 
     assert_redirected_to company_url(Company.last)
+
+    assert @company.save
   end
 
   test "should show company" do

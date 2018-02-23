@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  cnpj: MyString
-  name: MyString
+  cnpj: 48.752.385/0001-70
+  name: Empresa A
 
 two:
-  cnpj: MyString
-  name: MyString
+  cnpj: 22.218.861/0001-83
+  name: Empresa B
