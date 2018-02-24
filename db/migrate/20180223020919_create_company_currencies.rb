@@ -1,6 +1,6 @@
 class CreateCompanyCurrencies < ActiveRecord::Migration[5.1]
   def change
-    create_table :company_currencies, id: false do |t|
+    create_table :company_currencies do |t|
       t.references :company, foreign_key: true
       t.references :currency, foreign_key: true
       t.integer :decimal_places

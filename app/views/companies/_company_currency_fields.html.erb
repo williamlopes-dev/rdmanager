@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :currency_id %>
+    <%= f.collection_select(:currency_id, Currency.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :decimal_places %>
+    <%= f.number_field :decimal_places, id: :company_currency_decimal_places %>
+  </div>
+  <%= link_to_remove_association "remove currency", f %>
+</div>

@@ -21,6 +21,16 @@
     <%= form.text_field :name, id: :company_name %>
   </div>
 
+  <h3>Currencies</h3>
+  <div id="company_currencies">
+    <%= form.fields_for :company_currencies do |company_currency| %>
+      <%= render 'company_currency_fields', f: company_currency %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add currency', form, :company_currencies %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

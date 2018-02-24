@@ -22,6 +22,16 @@
     <%= form.hidden_field :company_id, value: @company.id %>
   </div>
 
+  <h3>Prices</h3>
+  <div id="produtc_prices">
+    <%= form.fields_for :product_prices do |product_price| %>
+      <%= render 'product_price_fields', f: product_price %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add price', form, :product_prices %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

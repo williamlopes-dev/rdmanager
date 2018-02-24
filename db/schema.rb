@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180223020919) do
     t.index ["cnpj"], name: "index_companies_on_cnpj", unique: true
   end
 
-  create_table "company_currencies", id: false, force: :cascade do |t|
+  create_table "company_currencies", force: :cascade do |t|
     t.bigint "company_id"
     t.bigint "currency_id"
     t.integer "decimal_places"

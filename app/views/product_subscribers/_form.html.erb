@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :company_id %>
-    <%= form.collection_select(:company_id, Company.all, :id, :full_name) %>
+    <%= form.label :product_price_id %>
+    <%= form.collection_select(:product_price_id, ProductPrice.all, :id, :full_name) %>
   </div>
 
   <div class="field">
-    <%= form.label :product_price_id %>
-    <%= form.collection_select(:product_price_id, ProductPrice.all, :id, :full_name) %>
+    <%= form.label :company_id %>
+    <%= form.collection_select(:company_id, Company.all, :id, :full_name) %>
   </div>
 
   <div class="field">
