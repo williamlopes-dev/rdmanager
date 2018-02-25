@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180223020919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["currency_id"], name: "index_product_prices_on_currency_id"
+    t.index ["product_id", "currency_id"], name: "index_product_prices_on_product_id_and_currency_id", unique: true
     t.index ["product_id"], name: "index_product_prices_on_product_id"
   end
 
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180223020919) do
     t.boolean "is_payer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id", "product_price_id"], name: "index_product_subscribers_on_company_id_and_product_price_id", unique: true
     t.index ["company_id"], name: "index_product_subscribers_on_company_id"
     t.index ["product_price_id"], name: "index_product_subscribers_on_product_price_id"
   end

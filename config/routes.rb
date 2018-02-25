@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'grouped_subscribers/managers'
+
+  get 'grouped_subscribers/payers'
+
   root 'home#index'
   get 'home/index'
 

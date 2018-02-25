@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Product Subscribers - Managers</h1>
+
+<% @companies.each do |company| %>
+  <h3><%= company.name %></h3>
+  <% company.payed_by.each do |currency, product_subscribers| %>
+    <strong>Currency: </strong><%= currency.name %> | <strong>Total value: </strong><%= "%.2f" % total_value(product_subscribers) %>
+    <% product_subscribers.each do |product_subscriber| %>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Owner company</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= product_subscriber.product_price.full_name %></td>
+            <td><%= product_subscriber.company.full_name %></td>
+            <td><%= product_subscriber.product_price.price_formatted %></td>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'Back', root_path %>

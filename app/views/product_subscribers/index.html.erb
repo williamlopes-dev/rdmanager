@@ -5,8 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Company</th>
+      <th>Product owner</th>
+      <th>Product</th>
       <th>Product price</th>
+      <th>Product subscriber</th>
       <th>Is manager</th>
       <th>Is payer</th>
       <th colspan="3"></th>
@@ -16,8 +18,10 @@
   <tbody>
     <% @product_subscribers.each do |product_subscriber| %>
       <tr>
-        <td><%= product_subscriber.company %></td>
-        <td><%= product_subscriber.product_price %></td>
+        <td><%= product_subscriber.product_price.product.company.full_name %></td>
+        <td><%= product_subscriber.product_price.product.name %></td>
+        <td><%= product_subscriber.product_price.price_formatted %></td>
+        <td><%= product_subscriber.company.full_name %></td>
         <td><%= product_subscriber.is_manager %></td>
         <td><%= product_subscriber.is_payer %></td>
         <td><%= link_to 'Show', product_subscriber %></td>

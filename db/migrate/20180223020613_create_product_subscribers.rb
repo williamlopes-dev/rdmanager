@@ -8,5 +8,6 @@ class CreateProductSubscribers < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :product_subscribers, [:company_id, :product_price_id], unique: true
   end
 end

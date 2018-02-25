@@ -13,7 +13,8 @@
 </p>
 
 <p>
-  <strong><%= link_to 'Produtcs', company_products_path(@company) %></strong>
+  <strong><%= link_to "Produtcs (#{@company.products.length})", company_products_path(@company) %></strong> |
+  <%= link_to 'New Product', new_company_product_path(@company) %>
 </p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
