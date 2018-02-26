@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @company = companies(:one)
+    @company = companies(:company_d)
   end
 
   test "should get index" do
@@ -23,8 +23,6 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to company_url(Company.last)
-
-    assert @company.save
   end
 
   test "should show company" do

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CurrenciesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @currency = currencies(:one)
+    @currency = currencies(:currency_gbp)
   end
 
   test "should get index" do
@@ -16,6 +16,8 @@ class CurrenciesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create currency" do
+    assert @currency.destroy
+
     assert_difference('Currency.count') do
       post currencies_url, params: { currency: { name: @currency.name } }
     end
@@ -45,4 +47,5 @@ class CurrenciesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to currencies_url
   end
+  
 end

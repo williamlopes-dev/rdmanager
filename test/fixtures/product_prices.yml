@@ -1,11 +1,92 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  product: one
-  currency: one
-  price: 1
+# product a - company a
+product_a_company_a_price_ars:
+  product: product_a_company_a
+  currency: currency_ars
+  price: 100000
 
-two:
-  product: two
-  currency: two
-  price: 1
+product_a_company_a_price_brl:
+  product: product_a_company_a
+  currency: currency_brl
+  price: 10000
+
+product_a_company_a_price_eur:
+  product: product_a_company_a
+  currency: currency_eur
+  price: 1000
+
+# product b - company a
+product_b_company_a_price_ars:
+  product: product_b_company_a
+  currency: currency_ars
+  price: 200000
+
+product_b_company_a_price_brl:
+  product: product_b_company_a
+  currency: currency_brl
+  price: 20000
+
+product_b_company_a_price_eur:
+  product: product_b_company_a
+  currency: currency_eur
+  price: 2000
+
+# product a - company b
+product_a_company_b_price_ars:
+  product: product_a_company_b
+  currency: currency_ars
+  price: 500000
+
+product_a_company_b_price_brl:
+  product: product_a_company_b
+  currency: currency_brl
+  price: 50000
+
+product_a_company_b_price_usd:
+  product: product_a_company_b
+  currency: currency_usd
+  price: 5000
+
+#product b - company b
+product_b_company_b_price_ars:
+  product: product_b_company_b
+  currency: currency_ars
+  price: 700000
+
+product_b_company_b_price_brl:
+  product: product_b_company_b
+  currency: currency_brl
+  price: 70000
+
+product_b_company_b_price_usd:
+  product: product_b_company_b
+  currency: currency_usd
+  price: 7000
+
+# product c - company b
+product_c_company_b_price_ars:
+  product: product_c_company_b
+  currency: currency_ars
+  price: 3000000
+
+product_c_company_b_price_brl:
+  product: product_c_company_b
+  currency: currency_brl
+  price: 300000
+
+product_c_company_b_price_usd:
+  product: product_c_company_b
+  currency: currency_usd
+  price: 30000
+
+# product a - company e
+product_a_company_e_price_brl:
+  product: product_a_company_e
+  currency: currency_brl
+  price: 100
+
+product_a_company_e_price_usd:
+  product: product_a_company_e
+  currency: currency_usd
+  price: 50

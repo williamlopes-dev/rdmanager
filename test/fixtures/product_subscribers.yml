@@ -1,13 +1,115 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  company: one
-  product_price: one
-  is_manager: false
+product_subscriber_a:
+  company: company_c
+  product_price: product_a_company_a_price_ars
+  is_manager: true
   is_payer: false
 
-two:
-  company: two
-  product_price: two
-  is_manager: false
+product_subscriber_b:
+  company: company_c
+  product_price: product_a_company_a_price_brl
+  is_manager: true
   is_payer: false
+
+product_subscriber_c:
+  company: company_c
+  product_price: product_a_company_a_price_eur
+  is_manager: true
+  is_payer: true
+
+product_subscriber_d:
+  company: company_c
+  product_price: product_b_company_a_price_ars
+  is_manager: true
+  is_payer: false
+
+product_subscriber_e:
+  company: company_c
+  product_price: product_b_company_a_price_brl
+  is_manager: true
+  is_payer: false
+
+product_subscriber_f:
+  company: company_c
+  product_price: product_b_company_a_price_eur
+  is_manager: true
+  is_payer: true
+
+product_subscriber_g:
+  company: company_b
+  product_price: product_a_company_a_price_ars
+  is_manager: false
+  is_payer: true
+
+product_subscriber_h:
+  company: company_b
+  product_price: product_a_company_a_price_brl
+  is_manager: false
+  is_payer: true
+
+product_subscriber_i:
+  company: company_b
+  product_price: product_b_company_a_price_ars
+  is_manager: false
+  is_payer: true
+
+product_subscriber_j:
+  company: company_b
+  product_price: product_b_company_a_price_brl
+  is_manager: false
+  is_payer: true
+
+product_subscriber_k:
+  company: company_c
+  product_price: product_a_company_b_price_ars
+  is_manager: true
+  is_payer: true
+
+product_subscriber_l:
+  company: company_c
+  product_price: product_a_company_b_price_brl
+  is_manager: true
+  is_payer: true
+
+product_subscriber_m:
+  company: company_c
+  product_price: product_a_company_b_price_usd
+  is_manager: true
+  is_payer: true
+
+product_subscriber_n:
+  company: company_c
+  product_price: product_b_company_b_price_ars
+  is_manager: true
+  is_payer: true
+
+product_subscriber_o:
+  company: company_c
+  product_price: product_b_company_b_price_brl
+  is_manager: true
+  is_payer: true
+
+product_subscriber_p:
+  company: company_c
+  product_price: product_b_company_b_price_usd
+  is_manager: true
+  is_payer: true
+
+product_subscriber_q:
+  company: company_c
+  product_price: product_c_company_b_price_ars
+  is_manager: true
+  is_payer: true
+
+product_subscriber_r:
+  company: company_c
+  product_price: product_c_company_b_price_brl
+  is_manager: true
+  is_payer: true
+
+product_subscriber_s:
+  company: company_c
+  product_price: product_c_company_b_price_usd
+  is_manager: true
+  is_payer: true

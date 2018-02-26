@@ -1,9 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+company_a:
   cnpj: 48.752.385/0001-70
   name: Empresa A
 
-two:
+company_b:
   cnpj: 22.218.861/0001-83
   name: Empresa B
+
+company_c:
+  cnpj: 25.831.408/0001-36
+  name: Empresa C
+
+company_d:
+  cnpj: 71.495.091/0001-21
+  name: Empresa D
+
+company_e:
+  cnpj: 24.862.283/0001-49
+  name: Empresa E

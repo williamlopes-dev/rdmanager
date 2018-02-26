@@ -2,47 +2,50 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @product = products(:one)
+    @product = products(:product_a_company_d)
+    @company = companies(:company_d)
   end
 
   test "should get index" do
-    get products_url
+    get company_products_url(@company)
     assert_response :success
   end
 
   test "should get new" do
-    get new_product_url
+    get new_company_product_url(@company)
     assert_response :success
   end
 
   test "should create product" do
+    assert @product.destroy
+
     assert_difference('Product.count') do
-      post products_url, params: { product: { company_id: @product.company_id, name: @product.name } }
+      post company_products_url(@company), params: { product: { company_id: @product.company_id, name: @product.name } }
     end
 
-    assert_redirected_to product_url(Product.last)
+    assert_redirected_to company_product_url(@company, Product.last)
   end
 
   test "should show product" do
-    get product_url(@product)
+    get company_product_url(@company, @product)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_product_url(@product)
+    get edit_company_product_url(@company, @product)
     assert_response :success
   end
 
   test "should update product" do
-    patch product_url(@product), params: { product: { company_id: @product.company_id, name: @product.name } }
-    assert_redirected_to product_url(@product)
+    patch company_product_url(@company, @product), params: { product: { company_id: @product.company_id, name: @product.name } }
+    assert_redirected_to company_product_url(@company, @product)
   end
 
   test "should destroy product" do
     assert_difference('Product.count', -1) do
-      delete product_url(@product)
+      delete company_product_url(@company, @product)
     end
 
-    assert_redirected_to products_url
+    assert_redirected_to company_products_url(@company)
   end
 end

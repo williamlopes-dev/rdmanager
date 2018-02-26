@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ProductSubscribersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @product_subscriber = product_subscribers(:one)
+    @product_subscriber = product_subscribers(:product_subscriber_a)
   end
 
   test "should get index" do
@@ -16,6 +16,8 @@ class ProductSubscribersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create product_subscriber" do
+    assert @product_subscriber.destroy
+
     assert_difference('ProductSubscriber.count') do
       post product_subscribers_url, params: { product_subscriber: { company_id: @product_subscriber.company_id, is_manager: @product_subscriber.is_manager, is_payer: @product_subscriber.is_payer, product_price_id: @product_subscriber.product_price_id } }
     end

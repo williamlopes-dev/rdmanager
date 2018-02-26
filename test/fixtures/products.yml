@@ -1,9 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  company: one
+product_a_company_a:
+  name: Produto A
+  company: company_a
 
-two:
-  name: MyString
-  company: two
+product_b_company_a:
+  name: Produto B
+  company: company_a
+
+product_a_company_b:
+  name: Produto A
+  company: company_b
+
+product_b_company_b:
+  name: Produto B
+  company: company_b
+
+product_c_company_b:
+  name: Produto C
+  company: company_b
+
+product_a_company_d:
+  name: Produto A
+  company: company_d
+
+product_a_company_e:
+  name: Produto A
+  company: company_e

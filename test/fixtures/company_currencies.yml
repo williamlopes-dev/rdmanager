@@ -1,11 +1,51 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  company: one
-  currency: one
+company_currency_a_1:
+  company: company_a
+  currency: currency_ars
   decimal_places: 2
 
-two:
-  company: two
-  currency: two
-  decimal_places: 4
+company_currency_a_2:
+  company: company_a
+  currency: currency_brl
+  decimal_places: 2
+
+company_currency_a_3:
+  company: company_a
+  currency: currency_eur
+  decimal_places: 2
+
+company_currency_b_1:
+  company: company_b
+  currency: currency_ars
+  decimal_places: 2
+
+company_currency_b_2:
+  company: company_b
+  currency: currency_brl
+  decimal_places: 2
+
+company_currency_b_3:
+  company: company_b
+  currency: currency_usd
+  decimal_places: 2
+
+company_currency_d_1:
+  company: company_d
+  currency: currency_brl
+  decimal_places: 2
+
+company_currency_d_2:
+  company: company_d
+  currency: currency_usd
+  decimal_places: 2
+
+company_currency_e_1:
+  company: company_e
+  currency: currency_brl
+  decimal_places: 2
+
+company_currency_e_2:
+  company: company_e
+  currency: currency_usd
+  decimal_places: 2

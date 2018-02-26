@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_prices, reject_if: :all_blank, allow_destroy: true
 
   validates :company_id, presence: true
+  validates :name, presence: true
   validates_uniqueness_of :name, scope: :company_id
 
   before_validation do
