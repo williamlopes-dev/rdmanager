@@ -2,28 +2,28 @@ class ProductsController < ApplicationController
   before_action :set_company
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  # GET /products
-  # GET /products.json
+  # GET /companies/1/products
+  # GET /companies/1/products.json
   def index
     @products = Product.where(company: @company)
   end
 
-  # GET /products/1
-  # GET /products/1.json
+  # GET /companies/1/products/1
+  # GET /companies/1/products/1.json
   def show
   end
 
-  # GET /products/new
+  # GET /companies/1/products/new
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
+  # GET /companies/1/products/1/edit
   def edit
   end
 
-  # POST /products
-  # POST /products.json
+  # POST /companies/1/products
+  # POST /companies/1/products.json
   def create
     @product = Product.new(product_params)
 
@@ -38,8 +38,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
+  # PATCH/PUT /companies/1/products/1
+  # PATCH/PUT /companies/1/products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -52,8 +52,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
+  # DELETE /companies/1/products/1
+  # DELETE /companies/1/products/1.json
   def destroy
     @product.destroy
     respond_to do |format|
