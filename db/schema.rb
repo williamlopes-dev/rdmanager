@@ -16,33 +16,33 @@ ActiveRecord::Schema.define(version: 20180223020919) do
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.string "cnpj"
-    t.string "name"
+    t.string "cnpj", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cnpj"], name: "index_companies_on_cnpj", unique: true
   end
 
   create_table "company_currencies", force: :cascade do |t|
-    t.bigint "company_id"
-    t.bigint "currency_id"
-    t.integer "decimal_places"
+    t.bigint "company_id", null: false
+    t.bigint "currency_id", null: false
+    t.integer "decimal_places", null: false
     t.index ["company_id", "currency_id"], name: "index_company_currencies_on_company_id_and_currency_id", unique: true
     t.index ["company_id"], name: "index_company_currencies_on_company_id"
     t.index ["currency_id"], name: "index_company_currencies_on_currency_id"
   end
 
   create_table "currencies", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_currencies_on_name", unique: true
   end
 
   create_table "product_prices", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "currency_id"
-    t.integer "price"
+    t.bigint "product_id", null: false
+    t.bigint "currency_id", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["currency_id"], name: "index_product_prices_on_currency_id"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20180223020919) do
   end
 
   create_table "product_subscribers", force: :cascade do |t|
-    t.bigint "company_id"
-    t.bigint "product_price_id"
-    t.boolean "is_manager"
-    t.boolean "is_payer"
+    t.bigint "company_id", null: false
+    t.bigint "product_price_id", null: false
+    t.boolean "is_manager", null: false
+    t.boolean "is_payer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id", "product_price_id"], name: "index_product_subscribers_on_company_id_and_product_price_id", unique: true
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20180223020919) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.bigint "company_id"
+    t.string "name", null: false
+    t.bigint "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id", "name"], name: "index_products_on_company_id_and_name", unique: true
