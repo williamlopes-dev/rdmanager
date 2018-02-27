@@ -21,20 +21,4 @@ class Product < ApplicationRecord
     "#{self.name} - #{self.company.full_name}"
   end
 
-  def prices_by_currency
-    arr = []
-    unless self.product_prices.nil?
-      self.product_prices.each do |product_price|
-        arr << {
-          price: product_price.price_to_f,
-          currency_id: product_price.currency.id,
-          currency_name: product_price.currency.name,
-          created_at: product_price.created_at,
-          updated_at: product_price.updated_at
-        }
-      end
-    end
-    arr
-  end
-
 end
