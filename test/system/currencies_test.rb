@@ -22,7 +22,7 @@ class CurrenciesTest < ApplicationSystemTestCase
 
     visit currency_url(currency)
 
-    assert_selector "p", text: currency.name
+    assert_selector "h5", text: currency.name
   end
 
   test "adding new company" do

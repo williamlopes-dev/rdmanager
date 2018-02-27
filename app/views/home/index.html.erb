@@ -1,21 +1,14 @@
-<h1>rdmanager</h1>
+<div class="page-header">
+  <h1>rdmanager</h1>
+</div>
 
-<p>
-  <%= link_to 'Companies', companies_path %>
-</p>
-
-<p>
-  <%= link_to 'Product Subscribers', product_subscribers_path %>
-</p>
-
-<p>
-  <%= link_to 'Subscribers - Managers', grouped_subscribers_managers_path %>
-</p>
-
-<p>
-  <%= link_to 'Subscribers - Payers', grouped_subscribers_payers_path %>
-</p>
-
-<p>
-  <%= link_to 'Currencies', currencies_path %>
-</p>
+<div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+  <div class="list-group">
+    <span class="list-group-item active">Menu</span>
+    <%= link_to 'Companies', companies_path, class: 'list-group-item' %>
+    <%= link_to 'Product Subscribers', product_subscribers_path, class: 'list-group-item' %>
+    <%= link_to 'Subscribers - Managers', grouped_subscribers_managers_path, class: 'list-group-item' %>
+    <%= link_to 'Subscribers - Payers', grouped_subscribers_payers_path, class: 'list-group-item' %>
+    <%= link_to 'Currencies', currencies_path, class: 'list-group-item' %>
+  </div>
+</div>

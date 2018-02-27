@@ -1,16 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Product</h1>
+<div class="page-header">
+  <h1>Product</h1>
+</div>
 
 <p>
-  <strong>Name:</strong>
-  <%= @product.name %>
+  <h5><strong>Name:</strong> <%= @product.name %></h5>
 </p>
+<br />
 
 <p>
-  <strong>Company:</strong>
-  <%= @product.company.full_name %>
+  <h5><strong>Company:</strong> <%= @product.company.full_name %></h5>
 </p>
+<br />
 
-<%= link_to 'Edit', edit_company_product_path(@company, @product) %> |
-<%= link_to 'Back', company_products_path(@company) %>
+<%= link_to 'Back', company_products_path(@company), :class => 'btn btn-link'  %>
+<%= link_to 'Edit', edit_company_product_path(@company, @product), :class => 'btn btn-default' %>
+<%= link_to 'Destroy',
+              company_product_path(@company, @product),
+              :method => 'delete',
+              :data => { confirm: 'Are you sure?' },
+              :class => 'btn btn-danger' %>

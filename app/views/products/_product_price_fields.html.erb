@@ -1,12 +1,18 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :currency_id %>
-    <%= f.collection_select(:currency_id, @company.currencies, :id, :name) %>
+  <div class="form-group col-lg-12">
+    <%= f.label :currency_id, class: 'control-label col-lg-3' %>
+    <div class="col-lg-4">
+      <%= f.collection_select(:currency_id, @company.currencies, :id, :name, {}, {class: 'form-control'}) %>
+    </div>
+    <%= f.error_span(:currency_id) %>
   </div>
 
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price, id: :product_price_price %>
+  <div class="form-group col-lg-12">
+    <%= f.label :price, class: 'control-label col-lg-3' %>
+    <div class="col-lg-4">
+      <%= f.number_field :price, id: :product_price_price, class: 'form-control' %>
+    </div>
+    <%= f.error_span(:price) %>
   </div>
-  <%= link_to_remove_association "remove price", f %>
+  <%= link_to_remove_association "remove price", f, class: 'btn btn-danger' %>
 </div>

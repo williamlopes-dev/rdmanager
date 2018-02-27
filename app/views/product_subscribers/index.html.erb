@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Product Subscribers</h1>
+<div class="page-header">
+  <h1>Product Subscribers</h1>
+</div>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Product owner</th>
@@ -11,7 +13,7 @@
       <th>Product subscriber</th>
       <th>Is manager</th>
       <th>Is payer</th>
-      <th colspan="3"></th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -24,9 +26,11 @@
         <td><%= product_subscriber.company.full_name %></td>
         <td><%= product_subscriber.is_manager %></td>
         <td><%= product_subscriber.is_payer %></td>
-        <td><%= link_to 'Show', product_subscriber %></td>
-        <td><%= link_to 'Edit', edit_product_subscriber_path(product_subscriber) %></td>
-        <td><%= link_to 'Destroy', product_subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', product_subscriber, :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Edit', edit_product_subscriber_path(product_subscriber), :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'Destroy', product_subscriber, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +38,5 @@
 
 <br>
 
-<%= link_to 'New Product Subscriber', new_product_subscriber_path %> |
-<%= link_to 'Back', root_path %>
+<%= link_to 'New Product Subscriber', new_product_subscriber_path, :class => 'btn btn-primary' %>
+<%= link_to 'Back', root_path, :class => 'btn btn-link' %>

@@ -21,7 +21,7 @@ class ProductsTest < ApplicationSystemTestCase
 
     visit company_product_url(company, product)
 
-    assert_selector "p", text: product.name
+    assert_selector "h5", text: product.name
   end
 
   test "adding new product" do

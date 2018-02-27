@@ -1,12 +1,18 @@
 <div class="nested-fields">
-  <div class="field">
-    <%= f.label :currency_id %>
-    <%= f.collection_select(:currency_id, Currency.all, :id, :name) %>
+  <div class="form-group col-lg-12">
+    <%= f.label :currency_id, class: 'control-label col-lg-3' %>
+    <div class="col-lg-9">
+      <%= f.collection_select(:currency_id, Currency.all, :id, :name, {}, {class: 'form-control'}) %>
+    </div>
+    <%= f.error_span(:currency_id) %>
   </div>
 
-  <div class="field">
-    <%= f.label :decimal_places %>
-    <%= f.number_field :decimal_places, id: :company_currency_decimal_places %>
+  <div class="form-group col-lg-12">
+    <%= f.label :decimal_places, class: 'control-label col-lg-3' %>
+    <div class="col-lg-4">
+      <%= f.number_field :decimal_places, id: :company_currency_decimal_places, class: 'form-control' %>
+    </div>
+    <%= f.error_span(:decimal_places) %>
   </div>
-  <%= link_to_remove_association "remove currency", f %>
+  <%= link_to_remove_association "remove currency", f, class: 'btn btn-danger' %>
 </div>

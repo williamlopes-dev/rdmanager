@@ -25,8 +25,8 @@ class CompaniesTest < ApplicationSystemTestCase
 
     visit company_url(company)
 
-    assert_selector "p", text: company.cnpj
-    assert_selector "p", text: company.name
+    assert_selector "h5", text: company.cnpj
+    assert_selector "h5", text: company.name
   end
 
   test "adding new company" do

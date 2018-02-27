@@ -26,7 +26,7 @@ class ProductPrice < ApplicationRecord
   end
 
   def full_name
-    "#{self.product.name} #{price_formatted} #{self.currency.name} - #{self.product.company.full_name}"
+    "#{self.product.name} #{price_formatted} - #{self.product.company.full_name}"
   end
 
   def price_formatted

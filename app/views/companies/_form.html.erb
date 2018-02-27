@@ -1,37 +1,64 @@
-<%= form_with(model: company, local: true) do |form| %>
-  <% if company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<%= form_for company, :html => { :class => "form-horizontal" } do |form| %>
 
-      <ul>
-      <% company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if company.errors.any? %>
+    <div id="error_explanation" class="panel panel-danger col-lg-offset-2 col-lg-10">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:
+        </h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% company.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :cnpj %>
-    <%= form.text_field :cnpj, id: :company_cnpj %>
+  <div class="form-group col-lg-12">
+    <%= form.label :cnpj, class: 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= form.text_field :cnpj, id: :company_cnpj, class: 'form-control' %>
+    </div>
+    <%= form.error_span(:cnpj) %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :company_name %>
+  <div class="form-group col-lg-12">
+    <%= form.label :name, class: 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= form.text_field :name, id: :company_name, class: 'form-control' %>
+    </div>
+    <%= form.error_span(:name) %>
   </div>
-
-  <h3>Currencies</h3>
-  <div id="company_currencies">
-    <%= form.fields_for :company_currencies do |company_currency| %>
-      <%= render 'company_currency_fields', f: company_currency %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add currency', form, :company_currencies %>
+  
+  <div class="container">
+    <div class="form-group col-lg-1">
+    </div>
+    <div class="form-group col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Currencies</h3>
+        </div>
+        <div class="panel-body">
+          <div id="company_currencies">
+            <%= form.fields_for :company_currencies do |company_currency| %>
+              <%= render 'company_currency_fields', f: company_currency %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association 'add currency', form, :company_currencies, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-lg-12">
+    <div class="col-lg-offset-2 col-lg-3">
+      <%= form.submit nil, class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', companies_path, class: 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

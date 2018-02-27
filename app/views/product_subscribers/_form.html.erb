@@ -1,37 +1,60 @@
-<%= form_with(model: product_subscriber, local: true) do |form| %>
-  <% if product_subscriber.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product_subscriber.errors.count, "error") %> prohibited this product_subscriber from being saved:</h2>
+<%= form_for product_subscriber, :html => { :class => "form-horizontal" } do |form| %>
 
-      <ul>
-      <% product_subscriber.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if product_subscriber.errors.any? %>
+    <div id="error_explanation" class="panel panel-danger col-lg-offset-2 col-lg-10">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= pluralize(product_subscriber.errors.count, "error") %> prohibited this product_subscriber from being saved:
+        </h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% product_subscriber.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :product_price_id %>
-    <%= form.collection_select(:product_price_id, ProductPrice.all, :id, :full_name, {}, {id: :product_subscriber_product_price_id}) %>
+  <div class="form-group col-lg-12">
+    <%= form.label :product_price_id, class: 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= form.collection_select(:product_price_id, ProductPrice.all, :id, :full_name, {},
+                        {id: :product_subscriber_product_price_id, class: 'form-control'}) %>
+    </div>
+    <%= form.error_span(:product_price_id) %>
   </div>
 
-  <div class="field">
-    <%= form.label :company_id %>
-    <%= form.collection_select(:company_id, Company.all, :id, :full_name, {}, {id: :product_subscriber_company_id}) %>
+  <div class="form-group col-lg-12">
+    <%= form.label :company_id, class: 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= form.collection_select(:company_id, Company.all, :id, :full_name, {},
+                        {id: :product_subscriber_company_id, class: 'form-control'}) %>
+    </div>
+    <%= form.error_span(:company_id) %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_manager %>
-    <%= form.check_box :is_manager, id: :product_subscriber_is_manager %>
+  <div class="form-group col-lg-12">
+    <%= form.label :is_manager, class: 'control-label col-lg-2' %>
+    <div class="col-lg-1">
+      <%= form.check_box :is_manager, id: :product_subscriber_is_manager %>
+    </div>
+    <%= form.error_span(:is_manager) %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_payer %>
-    <%= form.check_box :is_payer, id: :product_subscriber_is_payer %>
+  <div class="form-group col-lg-12">
+    <%= form.label :is_payer, class: 'control-label col-lg-2' %>
+    <div class="col-lg-1">
+      <%= form.check_box :is_payer, id: :product_subscriber_is_payer %>
+    </div>
+    <%= form.error_span(:is_payer) %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-lg-12">
+    <div class="col-lg-offset-2 col-lg-3">
+      <%= form.submit nil, class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', product_subscribers_path, class: 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

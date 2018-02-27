@@ -22,8 +22,8 @@ class ProductSubscribersTest < ApplicationSystemTestCase
 
     visit product_subscriber_url(product_subscriber)
 
-    assert_selector "p", text: product_subscriber.company.full_name
-    assert_selector "p", text: product_subscriber.product_price.full_name
+    assert_selector "h5", text: product_subscriber.company.full_name
+    assert_selector "h5", text: product_subscriber.product_price.full_name
   end
 
   test "adding new product" do

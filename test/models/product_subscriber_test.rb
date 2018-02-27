@@ -36,6 +36,15 @@ class ProductSubscriberTest < ActiveSupport::TestCase
     assert_not ps.save
   end
 
+  test "should not save product_subscriber with false is manager and is payer options" do
+    ps = ProductSubscriber.new
+    ps.company = @company
+    ps.product_price = @product_price1
+    ps.is_manager = false
+    ps.is_payer = false
+    assert_not ps.save
+  end
+
   test "should save product_subscriber correctly" do
     ps = ProductSubscriber.new
     ps.is_manager = true
